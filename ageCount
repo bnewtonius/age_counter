@@ -1,0 +1,12 @@
+#!/usr/bin/env awk -f
+BEGIN {
+    FS=",";
+    OFS=",";
+}
+{
+    count[$NF]++;
+}
+END {
+    for (age in count)
+        print age, count[age]
+}
